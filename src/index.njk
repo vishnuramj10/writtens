@@ -1,0 +1,167 @@
+---
+layout: base
+title: Writtens
+---
+
+{# Sync check — runs before any paint, prevents intro flash on return visits #}
+<script>(function(){if(sessionStorage.getItem('w-intro')){document.documentElement.classList.add('skip-intro');}else{sessionStorage.setItem('w-intro','1');}})();</script>
+
+{# ── Intro splash ─────────────────────────────── #}
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-inner">
+    <p class="intro-eyebrow" id="intro-eyebrow">A reading place</p>
+    <h1 class="intro-title" id="intro-title">Writtens</h1>
+    <div class="intro-stripe" id="intro-stripe">
+      <span class="s1"></span><span class="s2"></span><span class="s3"></span>
+      <span class="s4"></span><span class="s5"></span>
+    </div>
+  </div>
+</div>
+
+{# ── Page content (hidden until intro finishes) ── #}
+<div class="home-tagline-bar js-reveal">
+  <div class="home-inner">
+    <p class="home-tagline">Essays. Poems. Thoughts.</p>
+    <div class="hero-stripe">
+      <span class="s1"></span><span class="s2"></span><span class="s3"></span>
+      <span class="s4"></span><span class="s5"></span>
+    </div>
+  </div>
+</div>
+
+<section class="articles-section js-reveal">
+  <div class="articles-container">
+
+    <p class="section-label">Recent writing</p>
+
+    {% if collections.articles.length %}
+      <div class="articles-list">
+        {% for article in collections.articles %}
+          <article class="article-card js-card">
+            <div class="card-meta">
+              <time>{{ article.date | dateFormat }}</time>
+              {% if article.data.author %}
+                <span class="dot">·</span>
+                <span>{{ article.data.author }}</span>
+              {% endif %}
+            </div>
+
+            <h2 class="card-title">
+              <a href="{{ article.url }}">{{ article.data.title }}</a>
+            </h2>
+
+            {% if article.data.description %}
+              <p class="card-excerpt">{{ article.data.description }}</p>
+            {% endif %}
+
+            {% if article.data.articleTags and article.data.articleTags.length %}
+              <ul class="card-tags">
+                {% for tag in article.data.articleTags %}
+                  <li>{{ tag }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+
+            <a href="{{ article.url }}" class="card-read">Read →</a>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="empty-state">Nothing published yet. Words are coming.</p>
+    {% endif %}
+
+  </div>
+</section>
+
+{# ── Intro animation script ───────────────────── #}
+<script>
+(function () {
+  // Return visitors: nothing to do (CSS hides intro, content already visible)
+  if (document.documentElement.classList.contains('skip-intro')) return;
+
+  var intro      = document.getElementById('intro');
+  var introTitle = document.getElementById('intro-title');
+  var eyebrow    = document.getElementById('intro-eyebrow');
+  var stripe     = document.getElementById('intro-stripe');
+  var navLogo    = document.querySelector('.site-logo');
+  var reveals    = document.querySelectorAll('.js-reveal');
+  var cards      = document.querySelectorAll('.js-card');
+
+  if (!intro || !introTitle || !navLogo) return;
+
+  // ── Hide nav logo and page content until we reveal them ──
+  navLogo.style.opacity = '0';
+
+  reveals.forEach(function (el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(28px)';
+  });
+  cards.forEach(function (el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+  });
+
+  // ── Main animation: title flies to nav bar ──
+  function flyToNav() {
+    var navRect   = navLogo.getBoundingClientRect();
+    var titleRect = introTitle.getBoundingClientRect();
+
+    // Vector from title center → nav logo center
+    var dx    = (navRect.left + navRect.width  / 2) - (titleRect.left + titleRect.width  / 2);
+    var dy    = (navRect.top  + navRect.height / 2) - (titleRect.top  + titleRect.height / 2);
+    var scale = navRect.width / titleRect.width;
+
+    // 1. Fade out eyebrow + stripe immediately
+    [eyebrow, stripe].forEach(function (el) {
+      if (!el) return;
+      el.style.transition = 'opacity 0.2s ease';
+      el.style.opacity = '0';
+    });
+
+    // 2. Title flies to nav position (0.75s), then fades near the end
+    introTitle.style.transition =
+      'transform 0.75s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.2s ease 0.55s';
+    introTitle.style.transform = 'translate(' + dx + 'px, ' + dy + 'px) scale(' + scale + ')';
+    introTitle.style.opacity = '0';
+
+    // 3. Intro background dissolves
+    setTimeout(function () {
+      intro.style.transition = 'opacity 0.45s ease';
+      intro.style.opacity = '0';
+    }, 280);
+
+    // 4. Real nav logo fades in just as title arrives
+    setTimeout(function () {
+      navLogo.style.transition = 'opacity 0.3s ease';
+      navLogo.style.opacity = '1';
+    }, 580);
+
+    // 5. Remove intro, then reveal page content
+    setTimeout(function () {
+      intro.style.display = 'none';
+
+      // Reveal sections (staggered)
+      reveals.forEach(function (el, i) {
+        setTimeout(function () {
+          el.style.transition = 'opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)';
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, i * 140);
+      });
+
+      // Reveal cards (staggered, slightly after sections)
+      cards.forEach(function (card, i) {
+        setTimeout(function () {
+          card.style.transition = 'opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 180 + i * 120);
+      });
+
+    }, 820);
+  }
+
+  // Wait for CSS intro-in animations to finish, then fly
+  setTimeout(flyToNav, 1600);
+})();
+</script>

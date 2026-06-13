@@ -1,0 +1,115 @@
+---
+layout: base
+---
+
+{# ── Left edge: pens + punctuation drifting down ── #}
+<div class="edge-deco edge-deco--left" aria-hidden="true">
+  <div class="edge-track">
+    <span>✒</span><span>.</span><span>✏</span><span>,</span><span>✍</span>
+    <span>;</span><span>✒</span><span>:</span><span>✎</span><span>!</span>
+    <span>✏</span><span>?</span><span>✒</span><span>—</span><span>✍</span>
+    <span>…</span><span>✑</span><span>§</span><span>✒</span><span>¶</span>
+    <span>✏</span><span>†</span><span>✍</span><span>·</span><span>✒</span>
+    <span>✒</span><span>.</span><span>✏</span><span>,</span><span>✍</span>
+    <span>;</span><span>✒</span><span>:</span><span>✎</span><span>!</span>
+    <span>✏</span><span>?</span><span>✒</span><span>—</span><span>✍</span>
+    <span>…</span><span>✑</span><span>§</span><span>✒</span><span>¶</span>
+    <span>✏</span><span>†</span><span>✍</span><span>·</span><span>✒</span>
+  </div>
+</div>
+
+{# ── Right edge: letters + writing symbols drifting down ── #}
+<div class="edge-deco edge-deco--right" aria-hidden="true">
+  <div class="edge-track edge-track--slow">
+    <span>a</span><span>b</span><span>✉</span><span>c</span><span>d</span>
+    <span>e</span><span>✒</span><span>f</span><span>g</span><span>h</span>
+    <span>¶</span><span>i</span><span>j</span><span>k</span><span>✏</span>
+    <span>l</span><span>m</span><span>n</span><span>§</span><span>o</span>
+    <span>p</span><span>✍</span><span>q</span><span>r</span><span>s</span>
+    <span>†</span><span>t</span><span>u</span><span>v</span><span>✎</span>
+    <span>w</span><span>x</span><span>y</span><span>z</span><span>✉</span>
+    <span>a</span><span>b</span><span>✉</span><span>c</span><span>d</span>
+    <span>e</span><span>✒</span><span>f</span><span>g</span><span>h</span>
+    <span>¶</span><span>i</span><span>j</span><span>k</span><span>✏</span>
+    <span>l</span><span>m</span><span>n</span><span>§</span><span>o</span>
+    <span>p</span><span>✍</span><span>q</span><span>r</span><span>s</span>
+    <span>†</span><span>t</span><span>u</span><span>v</span><span>✎</span>
+    <span>w</span><span>x</span><span>y</span><span>z</span><span>✉</span>
+  </div>
+</div>
+
+<div class="article-layout">
+
+  {# ── Left: sticky metadata ────────────────── #}
+  <aside class="aside-left">
+    <div class="aside-left-inner">
+
+      {% if author %}
+        <div class="aside-block">
+          <span class="aside-label">Written by</span>
+          <span class="aside-val">{{ author }}</span>
+        </div>
+      {% endif %}
+
+      <div class="aside-block">
+        <span class="aside-label">Published</span>
+        <time class="aside-val" datetime="{{ date | dateISO }}">{{ date | dateFormat }}</time>
+      </div>
+
+      <div class="aside-block">
+        <span class="aside-label">Length</span>
+        <span class="aside-val">{{ content | readingTime }}</span>
+      </div>
+
+      <div class="aside-fade-line"></div>
+
+    </div>
+  </aside>
+
+  {# ── Center: article ──────────────────────── #}
+  <article class="article-body">
+
+    <div class="mobile-meta">
+      {% if author %}<span>{{ author }}</span><span class="dot">·</span>{% endif %}
+      <time datetime="{{ date | dateISO }}">{{ date | dateFormat }}</time>
+      <span class="dot">·</span>
+      <span>{{ content | readingTime }}</span>
+    </div>
+
+    <header class="article-header">
+      <h1 class="article-title">{{ title }}</h1>
+      {% if description %}
+        <p class="article-description">{{ description }}</p>
+      {% endif %}
+      <div class="article-rule"></div>
+    </header>
+
+    <div class="article-content">
+      {{ content | safe }}
+    </div>
+
+    <footer class="article-footer">
+      <a href="/" class="back-link">← All writing</a>
+    </footer>
+
+  </article>
+
+  {# ── Right: color decoration ──────────────── #}
+  <aside class="aside-right" aria-hidden="true">
+    <div class="aside-right-inner">
+      <div class="rdeco">
+        <span class="rdeco-dot" style="background:var(--teal)"></span>
+        <span class="rdeco-seg"></span>
+        <span class="rdeco-dot" style="background:var(--orange)"></span>
+        <span class="rdeco-seg"></span>
+        <span class="rdeco-dot" style="background:var(--pink)"></span>
+        <span class="rdeco-seg"></span>
+        <span class="rdeco-dot" style="background:var(--blue)"></span>
+        <span class="rdeco-seg"></span>
+        <span class="rdeco-dot" style="background:var(--olive)"></span>
+        <span class="rdeco-tail"></span>
+      </div>
+    </div>
+  </aside>
+
+</div>
