@@ -1,7 +1,7 @@
 ---
 title: "Walking out of Reality"
 date: "2026-06-13"
-author: "Vishnu"
+author: "vishhh"
 description: "Dreams, parallel universes, and what it might mean when your sleeping mind slips out of this world into another."
 layout: article
 ---
