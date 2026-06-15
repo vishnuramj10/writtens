@@ -137,6 +137,65 @@ a:hover { color: var(--teal-soft); }
   to   { transform: translateY(-105%); }
 }
 
+/* ── Intro paw prints ── */
+.intro-paws {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ip {
+  position: absolute;
+  opacity: 0;
+  animation: introPawPop 1.8s ease forwards;
+}
+
+.ip1 { top: 18%; left: 12%;  font-size: 1.4rem; animation-delay: 0.5s; }
+.ip2 { top: 22%; right: 14%; font-size: 1rem;   animation-delay: 0.7s; }
+.ip3 { top: 60%; left: 10%;  font-size: 1.2rem; animation-delay: 0.6s; }
+.ip4 { top: 65%; right: 12%; font-size: 0.9rem; animation-delay: 0.85s; }
+.ip5 { top: 40%; left: 6%;   font-size: 0.8rem; animation-delay: 0.95s; }
+.ip6 { top: 38%; right: 7%;  font-size: 1.1rem; animation-delay: 0.75s; }
+
+@keyframes introPawPop {
+  0%   { opacity: 0;    transform: scale(0.3) rotate(-20deg); }
+  35%  { opacity: 0.45; transform: scale(1.1) rotate(6deg); }
+  65%  { opacity: 0.4;  transform: scale(1)   rotate(-3deg); }
+  100% { opacity: 0;    transform: scale(0.85) translateY(-14px); }
+}
+
+/* ── Ambient floating paws (homepage) ── */
+.paw-ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.pa {
+  position: absolute;
+  opacity: 0;
+  animation: paFloat 9s ease-in-out infinite;
+}
+
+.pa1 { top: 18%; left: 2.5%;  font-size: 0.8rem;  animation-delay: 0s; }
+.pa2 { top: 42%; right: 3%;   font-size: 0.7rem;  animation-delay: 2s; }
+.pa3 { top: 68%; left: 3%;    font-size: 0.9rem;  animation-delay: 4s; }
+.pa4 { top: 28%; right: 2.5%; font-size: 0.75rem; animation-delay: 1s; }
+.pa5 { top: 55%; left: 2%;    font-size: 0.65rem; animation-delay: 5.5s; }
+.pa6 { top: 78%; right: 4%;   font-size: 0.85rem; animation-delay: 3s; }
+
+@keyframes paFloat {
+  0%   { opacity: 0;    transform: translateY(0)    rotate(-12deg); }
+  20%  { opacity: 0.2;  transform: translateY(-10px) rotate(6deg); }
+  55%  { opacity: 0.22; transform: translateY(-6px)  rotate(-8deg); }
+  80%  { opacity: 0.1;  transform: translateY(-18px) rotate(8deg); }
+  100% { opacity: 0;    transform: translateY(-26px) rotate(-4deg); }
+}
+
+@media (max-width: 900px) { .paw-ambient { display: none; } }
+
 /* ─── Intro CSS entrance animations ─────────────── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
