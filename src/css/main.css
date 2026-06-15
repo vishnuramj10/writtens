@@ -740,6 +740,33 @@ html.skip-intro .intro { display: none; }
   color: var(--muted);
 }
 
+/* ─── Paw prints ────────────────────────────── */
+.paw-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.25rem 0 0;
+}
+
+.paw-row span {
+  font-size: 0.85rem;
+  display: inline-block;
+  opacity: 0;
+  animation: pawStep 4.5s ease-in-out infinite;
+}
+.paw-row span:nth-child(1) { animation-delay: 0s; }
+.paw-row span:nth-child(2) { animation-delay: 0.55s; }
+.paw-row span:nth-child(3) { animation-delay: 1.1s; }
+.paw-row span:nth-child(4) { animation-delay: 1.65s; }
+.paw-row span:nth-child(5) { animation-delay: 2.2s; }
+
+@keyframes pawStep {
+  0%   { opacity: 0;   transform: translateY(5px) scale(0.7); }
+  22%  { opacity: 0.5; transform: translateY(0)   scale(1); }
+  65%  { opacity: 0.5; transform: translateY(0)   scale(1); }
+  100% { opacity: 0;   transform: translateY(-3px) scale(0.85); }
+}
+
 /* ─── Footer ─────────────────────────────────── */
 .site-footer {
   padding: 2rem var(--pad);
