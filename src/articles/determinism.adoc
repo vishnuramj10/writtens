@@ -2,7 +2,7 @@
 title: "Determinism"
 date: "2026-08-20"
 author: "Bri"
-description: "A mostly unresearched and vibe-based musing on determinism, existential dread, and neon green pants."
+description: "a mostly unresearched and vibe based musing"
 layout: article
 ---
 
@@ -12,9 +12,9 @@ It is sometimes a curse to be a curious child who cannot find answers. Mostly fr
 
 Determinism is the view that things can only happen within our universe in one possible way. Everything, hence, is essentially predetermined; not by a god or some great entity in the sky but by the very physical laws that bind our existence. That atoms and their parts can only interact with each other in a specific way bound by the laws of physics and its forces.
 
-Determinism then is when we ask why things happen, all the answer we get or can ever get is the universe shrugging its nebulous shoulders. This is the way it is. We're all made of atoms. Every living thing, only a reaction. The atoms that make up the neurons and neurotransmitters of our brains function under code, not only evolutionary but also the immediate physical that influences the actions we take.
+Determinism then is when ask why things happen, all the answer we get or can ever get is the universe shrugging it's nebulous shoulders. This is the way it is. We're all made of atoms. Every living thing, only a reaction. The atoms that make up the neurons and neurotransmitters of our brains function under code, not only evolutionary but also the immediate physical that influences the actions we take.
 
-So, if I choose to wear my neon green pants today because they make me happy, it's not a choice at all but the culmination of the millions of interactions that the atoms of my brain have had throughout my life. It could not be any other way. The same logic would also apply to crime, I suppose. If one commits murder because their brain particles pirouetted a certain way, is it really their fault? I will leave that one there for us all to chew on uncomfortably.
+So, if I choose to wear my neon green pants today because they make me happy, it's not a choice at all but the culmination of the millions of interactions that the atoms of my brain have had throughout my life. It could not be any other way.The same logic would also apply to crime, I suppose. If one commits murder because their brain particles pirouetted a certain way, is it really their fault? I will leave that one there for us all to chew on uncomfortably.
 
 My favourite part about this though is that it makes us no different than microscopic unicellular things. We're all just an organism, floating through time and space, reacting to any stimuli just as directed by our chemical and physical interactions with our surroundings. Out of the dust, a little puppet dance, then back under.
 
