@@ -1,0 +1,21 @@
+---
+title: "Not observed it? Now you will"
+date: "2026-08-24"
+author: "vishhh"
+description: "On the frequency illusion, selective attention, and a stray idea about how it might already be showing up in how AI models learn."
+layout: article
+---
+
+This is something which happened to me, and I hope it captures us while reading this. People start observing and noticing one particular event, thing, or word after recently becoming aware of it. This is something which happens to everyone in daily life; however, many often do not know what it means. This is called a frequency illusion, also called the Baader–Meinhof phenomenon.
+
+What does it do? From now on, you will experience this word in your daily life. Why? It is not the universe hinting you towards this, but your brain starting to notice something which you already know.
+
+There is a lot of history behind this phenomenon becoming observable by historians and finally naming it after the person who kept understanding it, but there are things which are keenly interesting. This phenomenon is completely used by people in real life to avoid or even to take advantage of.
+
+One such example is doctors becoming aware of a condition and starting to notice it in patients just because they have recently understood it, and it's not much of a concern. It is a common cause in research where people take steps to avoid this phenomenon so that they don't repeatedly observe and come to the same conclusion always. While this can be seen like this, it can also be seen as a boon: selective attention, where they can avoid any distraction and keep focusing only on a particular aspect. Interesting how a common daily human mind phenomenon has such wide usages.
+
+In the science way, it's actually a very captivating logic—a combination of selective attention, where our brain cannot take all the things we see but selects and filters part of what we know, and confirmation bias, where we process things which we know factually and that this information supports. Not only this, our brain also starts noticing and keeping a tally of how many times we have observed. Well, until you know the science behind it, it was always curious to everyone we know and have spoken about this effect till date.
+
+One more interesting intersection of this into technology and real-world AI, coming from a research mind, I do believe naturally occurring science and physics is something which is incorporated into innovations. For a simple example, our brain functions are now implemented into a machine and a topic called neural nets. While this is a basic example, there are massive examples where Einstein's theory that mass bends light is being used, where galaxies are being used as a lens and telescope.
+
+One of thought was to incorporate this Baader–Meinhof phenomenon into real-world AI. Basically, when a model or GPT, for instance, for non-tech readers, encounters a new word or concept during its training, we can give additional attention to this salient concept, where subsequent encounters are frequently identified and noticed, similar to how our brain does, giving GPT more power to learn and reinforce itself by observing things a human says/does. Not sure well and how this could work, but it's something to scratch into or if maybe it  is already incorporated in the research.
