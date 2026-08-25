@@ -2,7 +2,7 @@
 title: "Not observed it? Now you will"
 date: "2026-08-24"
 author: "vishhh"
-description: "On the frequency illusion, selective attention, and a stray idea about how it might already be showing up in how AI models learn."
+description: "On the frequency illusion and selective attention."
 layout: article
 ---
 
