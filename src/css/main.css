@@ -353,6 +353,16 @@ html.skip-intro .intro { display: none; }
   margin-bottom: 1.75rem;
 }
 
+.home-tagline-sub {
+  font-family: var(--body);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-light);
+  opacity: 0.65;
+  margin-top: -1rem;
+  margin-bottom: 1.75rem;
+}
+
 .hero-stripe {
   display: flex;
   align-items: center;
